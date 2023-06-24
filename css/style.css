@@ -4,6 +4,7 @@
 :root {
   --main-clr: #03a9f4;
   --main-clr-alt: hsl(199, 100%, 28%);
+  --main-clr-alt-400: hsla(199, 100%, 28%, 40%);
 
   /* --font-color: white;
   --page-color: hsla(0, 0%, 0%, 93%); */
@@ -319,17 +320,29 @@ header::before {
 
 /* Start Contact Form */
 .contact-section {
+  position: relative;
+
   display: flex;
   flex-direction: row;
   align-items: center;
   border-top: 1px solid #fff;
   gap: 4em;
+
+  background-image: url('../imgs/contact_background.jpg');
+}
+.contact-section::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  background-color: rgb(0, 0, 0, 0.8);
 }
 .contact-section .contact-form {
+  position: relative;
+  margin-left: 2rem;
   flex: 1.5;
   font-family: inherit;
   width: 100%;
-  background-color: var(--main-clr-alt);
+  background-color: var(--main-clr-alt-400);
   padding: 40px;
   border-radius: 10px;
 }
@@ -381,6 +394,7 @@ header::before {
 }
 .contact-section .contact-header h1 {
   margin: 0;
+  background-color: transparent;
   --font-settings: 6rem;
   line-height: var(--font-settings);
 }
